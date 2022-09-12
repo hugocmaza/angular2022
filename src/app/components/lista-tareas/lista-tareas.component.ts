@@ -9,10 +9,10 @@ import { TareaModel } from '../../models/tarea.model';
 })
 export class ListaTareasComponent implements OnInit {
 
-  tareas: TareaModel[] = [ new TareaModel(new Date(), "EStudiar Angular"),
-                          new TareaModel(new Date(),"Aprobar Angular"),
-                          new TareaModel(new Date(),"Aprobar Regularidad"),
-                          new TareaModel(new Date(),"Aprobar Examen Final")
+  tareas: TareaModel[] = [ new TareaModel(1,new Date(), "EStudiar Angular"),
+                          new TareaModel(2,new Date(),"Aprobar Angular"),
+                          new TareaModel(3,new Date(),"Aprobar Regularidad"),
+                          new TareaModel(4,new Date(),"Aprobar Examen Final")
 
   ];
   constructor() { }
@@ -26,8 +26,8 @@ export class ListaTareasComponent implements OnInit {
   }
 
   agregarTarea(nombre:string){
-    if (nombre.length>0){
-      let tareaNueva = new TareaModel(new Date(), nombre);
+     if (nombre.length>0){
+      let tareaNueva = new TareaModel(TareaModel.utlimo_id+1,new Date(), nombre);
       this.tareas = [tareaNueva, ...this.tareas];
     }
   }
@@ -35,7 +35,7 @@ export class ListaTareasComponent implements OnInit {
   nombreTareaNueva:string = "";
   otraFormaAgregarTarea(){
     if (this.nombreTareaNueva.length>0){
-      let tareaNueva = new TareaModel(new Date(), this.nombreTareaNueva);
+      let tareaNueva = new TareaModel(TareaModel.utlimo_id+1,new Date(), this.nombreTareaNueva);
       this.tareas.unshift(tareaNueva);
     }
   }
