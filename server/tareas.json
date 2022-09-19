@@ -1,0 +1,34 @@
+{
+  "tareas": [
+    {
+      "id": 1,
+      "titulo": "Tarea 1",
+      "fecha": "2022-01-01"
+    },
+    {
+      "titulo": "Tarea 2",
+      "fecha": "2022-04-04",
+      "id": 2
+    },
+    {
+      "id": 4,
+      "fecha": "2022-09-19T04:44:07.783Z",
+      "titulo": "tarea 4"
+    },
+    {
+      "titulo": "Tarea h",
+      "fecha": "2022-03-03",
+      "id": 5
+    },
+    {
+      "id": 6,
+      "fecha": "2022-09-19T22:51:11.703Z",
+      "titulo": "tarea 19092022"
+    },
+    {
+      "id": 11,
+      "fecha": "2022-09-21",
+      "titulo": "adasdasdasdasdasd"
+    }
+  ]
+}
