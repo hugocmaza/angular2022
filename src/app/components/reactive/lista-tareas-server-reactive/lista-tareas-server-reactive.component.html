@@ -1,0 +1,33 @@
+<div class="text-end">
+  <a routerLink="/agregar-tarea-reactive" class="btn btn-success rounded rounded-circle">
+      +
+  </a>
+</div>
+
+<table class="table">
+  <thead>
+      <tr>
+          <th></th>
+          <th>ID</th>
+          <th>Titulo</th>
+          <th class="text-end">Fecha</th>
+      </tr>
+  </thead>
+  <tbody>
+      <tr *ngFor="let tarea of tareas">
+          <td>
+              <a [routerLink]="['/modificar-tarea-reactive', tarea.id]"
+                 class="btn btn-success rounded rounded-circle me-2">
+                  ✏️
+              </a>
+              <button class="btn btn-danger rounded rounded-circle"
+              (click)="borrar(tarea.id)">
+                  🗑️
+              </button>
+          </td>
+          <td>{{tarea.titulo  }}</td>
+          <td>{{tarea.fecha | date : "yyyy-MM-dd"}}</td>
+
+      </tr>
+  </tbody>
+</table>
