@@ -1,11 +1,11 @@
-<form class="m-3" [formGroup]="form">
+<form class="m-3" [formGroup]="form12">
   <legend>Complete los datos para la tarea</legend>
 
   Nombre:
   <input type="text" class="form-control" formControlName="titulo" />
 
-         <div *ngIf="!form.get('titulo')?.valid" class="text-danger text-end">
-          {{form.get('titulo')?.errors | json}}
+         <div *ngIf="!form12.get('titulo')?.valid" class="text-danger text-end">
+          {{form12.get('titulo')?.errors | json}}
       </div>
   Fecha :
     <input type="date" class="form-control"  formControlName="fecha"/>
@@ -17,7 +17,7 @@
 
 <div>
   <h4>Degug Info</h4>
-  <div>Modelo: {{form.value | json}}</div>
+  <div>Modelo: {{form12.value | json}}</div>
 
 </div>
 

@@ -11,38 +11,37 @@ import Swal from 'sweetalert2';
   styleUrls: ['./agregar-tarea-reactive.component.css']
 })
 export class AgregarTareaReactiveComponent implements OnInit {
-
-  @Input()
-  tarea: Tarea = new Tarea(0,new Date(), "---");
-  tareas: Tarea[] = [];
-  form : FormGroup;
+  form12 : FormGroup;
 
      constructor(private tareaService:TareaService,
     private router:Router, formBuilder : FormBuilder) {
        /*this.form = new FormGroup({
         id: new FormControl(0),
       titulo : new FormControl(""),
-      fechaEmision : new FormControl(new Date())
+      fecha : new FormControl(new Date())
     })*/
-    this.form = formBuilder.group<Tarea>({
+
+    this.form12 = formBuilder.group<Tarea>({
       id:0,
       titulo : "",
       fecha:new Date()
     });
-    this.form.get("titulo")?.addValidators(Validators.required);
-    this.form.get("fecha")?.addValidators([Validators.required]);
+    console.log(this.form12);
+    this.form12.get("titulo")?.addValidators(Validators.required);
+
+    this.form12.get("fecha")?.addValidators([Validators.required]);
     }
 
   ngOnInit(): void {
   }
 
   show(producto:Tarea){
-    this.form.patchValue(producto);
+    this.form12.patchValue(producto);
   }
 
   formSubmit(){
-    if (this.form.valid){
-      this.tareaService.addTarea(this.form.value).subscribe(()=>{
+    if (this.form12.valid){
+      this.tareaService.addTarea(this.form12.value).subscribe(()=>{
         this.router.navigate(["lista-tareas-server-reactive"]);
       });
       Swal.fire("Confirmacion", "Se registro la tarea", "success");
