@@ -23,7 +23,7 @@ export class ModificarTareaReactiveComponent implements OnInit {
       /*this.form = new FormGroup({
         id: new FormControl(0),
       titulo : new FormControl(""),
-      fechaEmision : new FormControl(new Date())
+      fecha : new FormControl(new Date())
     })*/
     this.form = formBuilder.group<Tarea>({
       id:0,
